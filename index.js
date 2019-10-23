@@ -56,10 +56,18 @@ fs.readFile(path.join(__dirname, 'public/index.html'), {encoding: 'utf-8'}, (err
 
 			// Products and services section 
 			service_heading: "Our Products & Services",
+
 			native_products: "Native Products",
 			native_description: "We sell native products",
+
+			shoemending_service: "Shoemending",
+			shoemending_description: "We offer shoemending services",
+
 			western_products: "Western Products",
 			western_description: "We sell western products",
+
+			love_service: "Chosen with Love",
+			love_description: "Our antiques are handmade and chosen with love.",
 		}		
 
 		index_fr 		= {
@@ -76,10 +84,28 @@ fs.readFile(path.join(__dirname, 'public/index.html'), {encoding: 'utf-8'}, (err
 			// Header 
 			heading: "Une Visite Qui Vaut mille mots",
 			subheading: "Toujours accueillant depuis 1968",
-			call_to_action: "Montre moi!",
+			call_to_action: "Vraiment?",
 
 			// About section
-			about_heading: "About Our Shop"
+			about_heading: "À propos",
+			about_description: "Depuis l'an 1968, notre boutique est un arrêt préféré des touristes et des habitants de la région de Shédiac au NB",
+			about_description2: "Nous disposons de divers antiques amérindiennes et du style 'western' uniques. Visitez l'apperçu de nos produits et services ci-dessous!",
+			about_button: "Produits et services",
+
+			// Products and services section 
+			service_heading: "Nos produits et services",
+
+			native_products: "Produits amérindiens",
+			native_description: "Nous vendons des produits amérindiens",
+
+			shoemending_service: "Cordonnerie",
+			shoemending_description: "Nos offrons des services de cordonnerie",
+
+			western_products: "Produits western",
+			western_description: "Nous vendons des produits western",
+
+			love_service: "Choisi avec amour",
+			love_description: "Nos antiques sont fabriqués à la main et choisi avec amour.",
 		}
 		
 		// Express

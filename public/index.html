@@ -266,7 +266,7 @@
   <!-- Footer -->
   <footer class="bg-light py-5">
     <div class="container">
-      <div class="small text-center text-muted">Copyright &copy; Cordonnerie et Boutique Western 2019</div>
+      <div id="copyright" class="small text-center text-muted">Copyright &copy; Cordonnerie et Boutique Western</div>
     </div>
   </footer>
 
@@ -302,8 +302,12 @@
   <script type="text/javascript">
     var date = new Date();
     var year = date.getFullYear();
+    $('#copyright').html('Copyright &copy; Cordonnerie et Boutique Western ' + year);
   </script>
 
 </body>
 
+
 </html>
+
+{{{lang_overlay}}}

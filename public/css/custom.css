@@ -1,0 +1,58 @@
+.about-desc 
+{
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.about-img 
+{
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.zoom
+{
+	transition: transform 0.2s;
+}
+
+.zoom:hover
+{
+	transform: scale(1.1);
+}
+
+.navbar-brand
+{
+	font-size: 0.8rem;
+}
+
+@media (min-width: 375px)
+{
+	.navbar-brand
+	{
+		font-size: 1rem;
+	}
+}
+
+.lang-overlay
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 10000000000;
+	background-color: rgba(0.8, 0.8, 0.8, 0.5);
+}
+
+.lang-overlay-box
+{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translateX(-50%) translateY(-50%);
+	background-color: white;
+	border-radius: 1rem;
+	padding: 1rem;
+}

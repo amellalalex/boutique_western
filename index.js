@@ -22,6 +22,7 @@ const fs					= require('fs')
 
 // Index
 var index
+var index_lang
 var index_en
 var index_fr
 
@@ -33,6 +34,11 @@ function configure() {
 		else {
 			// Compile template
 			index 			= handlebars.compile(data.toString())
+			
+			index_lang	= {
+				lang_overlay: '<div class="lang-overlay"><div class="lang-overlay-box"><h1>Bienvenue / Welcome</h1><div class="row"><div class="col text-center"><a href="/fr" class="btn btn-xl btn-primary">FR</a> </div><div class="col text-center"><a href="/en" class="btn btn-xl btn-secondary">EN</a></div></div></div></div><link rel="stylesheet" type="text/css" href="css/disable_scroll.css">'
+			}
+
 			index_en 		= {
 				// Top of page
 				title: "Welcome - Cordonnerie et Boutique Western",
@@ -174,6 +180,14 @@ configure();
 // Express
 app.get('/', (req, res) => {
 	configure();
+	res.send(index(index_lang))
+})
+
+app.get('/en', (req, res) => {
+	res.send(index(index_en))
+})
+
+app.get('/fr', (req, res) => {
 	res.send(index(index_fr))
 })
 

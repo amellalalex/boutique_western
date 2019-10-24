@@ -20,99 +20,163 @@ const fs					= require('fs')
 // Configure //
 ///////////////
 
-// Handlebar templates //
-
 // Index
 var index
 var index_en
 var index_fr
 
-fs.readFile(path.join(__dirname, 'public/index.html'), {encoding: 'utf-8'}, (err, data) => {
-	if(err) console.log(`[!] Failed to load index template.`);
-	else {
-		// Compile template
-		index 			= handlebars.compile(data.toString())
-		index_en 		= {
-			// Top of page
-			title: "Welcome - Cordonnerie et Boutique Western",
-			brand: "Cordonnerie & Boutique Western",
+function configure() {
+	// Handlebar templates //
 
-			// Navbar
-			about_link: "About",
-			service_link: "Products & Services",
-			portfolio_link: "Portfolio",
-			contact_link: "Contact Us",
+	fs.readFile(path.join(__dirname, 'public/index.html'), {encoding: 'utf-8'}, (err, data) => {
+		if(err) console.log(`[!] Failed to load index template.`);
+		else {
+			// Compile template
+			index 			= handlebars.compile(data.toString())
+			index_en 		= {
+				// Top of page
+				title: "Welcome - Cordonnerie et Boutique Western",
+				brand: "Cordonnerie & Boutique Western",
 
-			// Header 
-			heading: "An Unforgettable Stop",
-			subheading: "Welcoming boutique-goers since 1968",
-			call_to_action: "Tell me more!",
+				// Navbar
+				about_link: "About",
+				service_link: "Products & Services",
+				portfolio_link: "Portfolio",
+				location_link: "Location",
+				contact_link: "Contact Us",
 
-			// About section
-			about_heading: "About Our Shop",
-			about_description: "Since 1968, our shop has served locals and tourists alike in the Shediac, NB area.",
-			about_description2: "We sell a wide range of unique aboriginal and western antiques. View our products and services below!",
-			about_button: "Products & Services",
+				// Header 
+				heading: "An Unforgettable Stop",
+				subheading: "Welcoming boutique-goers since 1968",
+				call_to_action: "Tell me more!",
 
-			// Products and services section 
-			service_heading: "Our Products & Services",
+				// About section
+				about_heading: "About Our Shop",
+				about_description: "Since 1968, our shop has served locals and tourists alike in the Shediac, NB area.",
+				about_description2: "We sell a wide range of unique aboriginal and western antiques. View our products and services below!",
+				about_button: "Products & Services",
 
-			native_products: "Native Products",
-			native_description: "We sell native products",
+				// Products and services section 
+				service_heading: "Our Products & Services",
 
-			shoemending_service: "Shoemending",
-			shoemending_description: "We offer shoemending services",
+				native_products: "Native Products",
+				native_description: "We sell native products",
 
-			western_products: "Western Products",
-			western_description: "We sell western products",
+				shoemending_service: "Shoemending",
+				shoemending_description: "We offer shoemending services",
 
-			love_service: "Chosen with Love",
-			love_description: "Our antiques are handmade and chosen with love.",
-		}		
+				western_products: "Western Products",
+				western_description: "We sell western products",
 
-		index_fr 		= {
-			// Top of page
-			title: "Accueil - Cordonnerie et Boutique Western",
-			brand: "Cordonnerie et Boutique Western",
+				love_service: "Chosen with Love",
+				love_description: "Our antiques are handmade and chosen with love.",
 
-			// Navbar
-			about_link: "À propos",
-			service_link: "Services",
-			portfolio_link: "Portfolio",
-			contact_link: "Nous Rejoindre",
+				// Portfolio
+				portfolio_hats_cat: "Men & Women's",
+				portfolio_hats_desc: "Hats",
 
-			// Header 
-			heading: "Une Visite Qui Vaut mille mots",
-			subheading: "Toujours accueillant depuis 1968",
-			call_to_action: "Vraiment?",
+				portfolio_anushka_cat: "Women's",
+				portfolio_anushka_desc: "Anushkas",
 
-			// About section
-			about_heading: "À propos",
-			about_description: "Depuis l'an 1968, notre boutique est un arrêt préféré des touristes et des habitants de la région de Shédiac au NB",
-			about_description2: "Nous disposons de divers antiques amérindiennes et du style 'western' uniques. Visitez l'apperçu de nos produits et services ci-dessous!",
-			about_button: "Produits et services",
+				portfolio_hatchets_cat: "Tools",
+				portfolio_hatchets_desc: "Hatchets",
 
-			// Products and services section 
-			service_heading: "Nos produits et services",
+				portfolio_purses_cat: "Women's",
+				portfolio_purses_desc: "Purses",
 
-			native_products: "Produits amérindiens",
-			native_description: "Nous vendons des produits amérindiens",
+				portfolio_boots_cat: "Men & Women's",
+				portfolio_boots_desc: "Boots",
 
-			shoemending_service: "Cordonnerie",
-			shoemending_description: "Nos offrons des services de cordonnerie",
+				portfolio_mocassins_cat: "Men & Women's",
+				portfolio_mocassins_desc: "Mocassins",
 
-			western_products: "Produits western",
-			western_description: "Nous vendons des produits western",
+				// Location
+				location_heading: "Location",
+				location_subheading: "It's easy to find us!",
 
-			love_service: "Choisi avec amour",
-			love_description: "Nos antiques sont fabriqués à la main et choisi avec amour.",
+				// Contact 
+				contact_heading: "Give Us a Call",
+				contact_subheading: "For any questions regarding our inventory, location, hours or more!",
+
+			}		
+
+			index_fr 		= {
+				// Top of page
+				title: "Accueil - Cordonnerie et Boutique Western",
+				brand: "Cordonnerie et Boutique Western",
+
+				// Navbar
+				about_link: "À propos",
+				service_link: "Services",
+				portfolio_link: "Portfolio",
+				location_link: "Endroit",
+				contact_link: "Nous Rejoindre",
+
+				// Header 
+				heading: "Une Visite Qui Vaut mille mots",
+				subheading: "Toujours accueillant depuis 1968",
+				call_to_action: "Parles-en!",
+
+				// About section
+				about_heading: "À propos",
+				about_description: "Depuis l'an 1968, notre boutique est un arrêt préféré des touristes et des habitants de la région de Shédiac au NB",
+				about_description2: "Nous disposons de divers antiques amérindiennes et du style 'western' uniques. Visitez l'apperçu de nos produits et services ci-dessous!",
+				about_button: "Produits et services",
+
+				// Products and services section 
+				service_heading: "Nos produits et services",
+
+				native_products: "Produits amérindiens",
+				native_description: "Nous vendons des produits amérindiens",
+
+				shoemending_service: "Cordonnerie",
+				shoemending_description: "Nos offrons des services de cordonnerie",
+
+				western_products: "Produits western",
+				western_description: "Nous vendons des produits western",
+
+				love_service: "Choisi avec amour",
+				love_description: "Nos antiques sont fabriqués à la main et choisi avec amour.",
+
+				// Portfolio
+				portfolio_hats_cat: "Pour hommes et femmes",
+				portfolio_hats_desc: "Chapeaux",
+
+				portfolio_anushka_cat: "Pour femmes",
+				portfolio_anushka_desc: "Anushkas",
+
+				portfolio_hatchets_cat: "Outils",
+				portfolio_hatchets_desc: "Hachettes",
+
+				portfolio_purses_cat: "Pour femmes",
+				portfolio_purses_desc: "Sacoches",
+
+				portfolio_boots_cat: "Pour hommes et femmes",
+				portfolio_boots_desc: "Bottes",
+
+				portfolio_mocassins_cat: "Pour hommes et femmes",
+				portfolio_mocassins_desc: "Mocassins",
+
+				// Location
+				location_heading: "Endroit",
+				location_subheading: "Nous ne sommes pas loins!",
+
+				// Contact 
+				contact_heading: "Lancez-nous un coup de fil",
+				contact_subheading: "Pour toutes questions qui pertinent à notre inventaire, où nous sommes situé, nos heures de travail ou plus!",
+			}
 		}
-		
-		// Express
-		app.get('/', (req, res) => res.send(index(index_en)))
+	})
+}
 
-		app.use(express.static('public'))
+configure();
 
-		app.listen(port, () => console.log(`Boutique Western JS is listening on port ${port}`))
-	}
+// Express
+app.get('/', (req, res) => {
+	configure();
+	res.send(index(index_fr))
 })
+
+app.use(express.static('public'))
+
+app.listen(port, () => console.log(`Boutique Western JS is listening on port ${port}`))

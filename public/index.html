@@ -26,6 +26,15 @@
   <!-- My CSS -->
   <link href="css/custom.css" rel="stylesheet">
 
+  <!-- Embedded Google Map -->
+  <style>
+    /* Set the size of the div element that contains the map */
+    #map {
+      height: 400px;  /* The height is 400 pixels */
+      width: 100%;  /* The width is the width of the web page */
+     }
+  </style>
+
 </head>
 
 <body id="page-top">
@@ -47,6 +56,9 @@
           </li>
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#portfolio">{{portfolio_link}}</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#location">{{location_link}}</a>
           </li>
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#contact">{{contact_link}}</a>
@@ -100,28 +112,28 @@
       <hr class="divider my-4">
       <div class="row">
         <div class="col-lg-3 col-md-6 text-center">
-          <div class="mt-5">
+          <div class="mt-5 zoom">
             <i class="fas fa-4x fa-feather text-primary mb-4"></i>
             <h3 class="h4 mb-2">{{native_products}}</h3>
             <p class="text-muted mb-0">{{native_description}}</p>
           </div>
         </div>
         <div class="col-lg-3 col-md-6 text-center">
-          <div class="mt-5">
+          <div class="mt-5 zoom">
             <i class="fas fa-4x fa-shoe-prints text-primary mb-4"></i>
             <h3 class="h4 mb-2">{{shoemending_service}}</h3>
             <p class="text-muted mb-0">{{shoemending_description}}</p>
           </div>
         </div>
         <div class="col-lg-3 col-md-6 text-center">
-          <div class="mt-5">
+          <div class="mt-5 zoom">
             <i class="fas fa-4x fa-hat-cowboy-side text-primary mb-4"></i>
             <h3 class="h4 mb-2">{{western_products}}</h3>
             <p class="text-muted mb-0">{{western_description}}</p>
           </div>
         </div>
         <div class="col-lg-3 col-md-6 text-center">
-          <div class="mt-5">
+          <div class="mt-5 zoom">
             <i class="fas fa-4x fa-heart text-primary mb-4"></i>
             <h3 class="h4 mb-2">{{love_service}}</h3>
             <p class="text-muted mb-0">{{love_description}}</p>
@@ -136,79 +148,79 @@
     <div class="container-fluid p-0">
       <div class="row no-gutters">
         <div class="col-lg-4 col-sm-6">
-          <a class="portfolio-box" href="img/portfolio/fullsize/1.jpg">
-            <img class="img-fluid" src="img/portfolio/thumbnails/1.jpg" alt="">
+          <a class="portfolio-box" href="img/products/1.jpg">
+            <img class="img-fluid" src="img/products/1.jpg" alt="">
             <div class="portfolio-box-caption">
               <div class="project-category text-white-50">
-                Category
+                {{portfolio_hats_cat}}
               </div>
               <div class="project-name">
-                Project Name
+                {{portfolio_hats_desc}}
               </div>
             </div>
           </a>
         </div>
         <div class="col-lg-4 col-sm-6">
-          <a class="portfolio-box" href="img/portfolio/fullsize/2.jpg">
-            <img class="img-fluid" src="img/portfolio/thumbnails/2.jpg" alt="">
+          <a class="portfolio-box" href="img/products/2.jpg">
+            <img class="img-fluid" src="img/products/2.jpg" alt="">
             <div class="portfolio-box-caption">
               <div class="project-category text-white-50">
-                Category
+                {{portfolio_anushka_cat}}
               </div>
               <div class="project-name">
-                Project Name
+                {{portfolio_anushka_desc}}
               </div>
             </div>
           </a>
         </div>
         <div class="col-lg-4 col-sm-6">
-          <a class="portfolio-box" href="img/portfolio/fullsize/3.jpg">
-            <img class="img-fluid" src="img/portfolio/thumbnails/3.jpg" alt="">
+          <a class="portfolio-box" href="img/products/3.jpg">
+            <img class="img-fluid" src="img/products/3.jpg" alt="">
             <div class="portfolio-box-caption">
               <div class="project-category text-white-50">
-                Category
+                {{portfolio_hatchets_cat}}
               </div>
               <div class="project-name">
-                Project Name
+                {{portfolio_hatchets_desc}}
               </div>
             </div>
           </a>
         </div>
         <div class="col-lg-4 col-sm-6">
-          <a class="portfolio-box" href="img/portfolio/fullsize/4.jpg">
-            <img class="img-fluid" src="img/portfolio/thumbnails/4.jpg" alt="">
+          <a class="portfolio-box" href="img/products/4.jpg">
+            <img class="img-fluid" src="img/products/4.jpg" alt="">
             <div class="portfolio-box-caption">
               <div class="project-category text-white-50">
-                Category
+                {{portfolio_purses_cat}}
               </div>
               <div class="project-name">
-                Project Name
+                {{portfolio_purses_desc}}
               </div>
             </div>
           </a>
         </div>
         <div class="col-lg-4 col-sm-6">
-          <a class="portfolio-box" href="img/portfolio/fullsize/5.jpg">
-            <img class="img-fluid" src="img/portfolio/thumbnails/5.jpg" alt="">
+          <a class="portfolio-box" href="img/products/5.jpg">
+            <img class="img-fluid" src="img/products/5.jpg" alt="">
             <div class="portfolio-box-caption">
               <div class="project-category text-white-50">
-                Category
+                {{portfolio_boots_cat}}
               </div>
               <div class="project-name">
-                Project Name
+                {{portfolio_boots_desc}}
               </div>
             </div>
           </a>
         </div>
         <div class="col-lg-4 col-sm-6">
-          <a class="portfolio-box" href="img/portfolio/fullsize/6.jpg">
-            <img class="img-fluid" src="img/portfolio/thumbnails/6.jpg" alt="">
+          <a class="portfolio-box" href="img/products/6.jpg">
+            <img class="img-fluid" src="img/products/6.jpg" alt="">
             <div class="portfolio-box-caption p-3">
               <div class="project-category text-white-50">
-                Category
+                {{portfolio_mocassins_cat}}
               </div>
               <div class="project-name">
-                Project Name
+                {{portfolio_mocassins_desc}}
               </div>
             </div>
           </a>
@@ -217,11 +229,19 @@
     </div>
   </section>
 
-  <!-- Call to Action Section -->
-  <section class="page-section bg-dark text-white">
-    <div class="container text-center">
-      <h2 class="mb-4">Free Download at Start Bootstrap!</h2>
-      <a class="btn btn-light btn-xl" href="https://startbootstrap.com/themes/creative/">Download Now!</a>
+  <!-- Location -->
+  <section class="page-section bg-light" id="location">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8 text-center">
+          <h2 class="mt-0">{{location_heading}}</h2>
+          <hr class="divider my-4">
+          <p class="text-muted mb-5">{{location_subheading}}</p>
+        </div>
+      </div>
+      <div class="row">
+        <div id="map"></div>
+      </div>
     </div>
   </section>
 
@@ -230,20 +250,14 @@
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-lg-8 text-center">
-          <h2 class="mt-0">Let's Get In Touch!</h2>
+          <h2 class="mt-0">{{contact_heading}}</h2>
           <hr class="divider my-4">
-          <p class="text-muted mb-5">Ready to start your next project with us? Give us a call or send us an email and we will get back to you as soon as possible!</p>
+          <p class="text-muted mb-5">{{contact_subheading}}</p>
         </div>
       </div>
       <div class="row">
-        <div class="col-lg-4 ml-auto text-center mb-5 mb-lg-0">
-          <i class="fas fa-phone fa-3x mb-3 text-muted"></i>
-          <div>+1 (202) 555-0149</div>
-        </div>
-        <div class="col-lg-4 mr-auto text-center">
-          <i class="fas fa-envelope fa-3x mb-3 text-muted"></i>
-          <!-- Make sure to change the email address in anchor text AND the link below! -->
-          <a class="d-block" href="mailto:contact@yourwebsite.com">contact@yourwebsite.com</a>
+        <div class="col-lg-12 ml-auto text-center mb-5 mb-lg-0">
+          <a href="tel:5065329559" class="btn btn-xl btn-success"><i class="fas fa-phone"></i> +1 (506) 532-9559</a>
         </div>
       </div>
     </div>
@@ -252,7 +266,7 @@
   <!-- Footer -->
   <footer class="bg-light py-5">
     <div class="container">
-      <div class="small text-center text-muted">Copyright &copy; 2019 - Start Bootstrap</div>
+      <div class="small text-center text-muted">Copyright &copy; Cordonnerie et Boutique Western 2019</div>
     </div>
   </footer>
 
@@ -266,6 +280,29 @@
 
   <!-- Custom scripts for this template -->
   <script src="js/creative.min.js"></script>
+
+  <!-- Google map embedded -->
+  <script>
+    // Initialize and add the map
+    function initMap() {
+      // The location of Uluru
+      var uluru = {lat: -25.344, lng: 131.036};
+      // The map, centered at Uluru
+      var map = new google.maps.Map(
+          document.getElementById('map'), {zoom: 4, center: uluru});
+      // The marker, positioned at Uluru
+      var marker = new google.maps.Marker({position: uluru, map: map});
+    }
+  </script>
+  <script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1tt9G8FcGa-RkyHRvRi70PH93rIzv5qg&callback=initMap">
+  </script>
+
+  <!-- Update copyright year -->
+  <script type="text/javascript">
+    var date = new Date();
+    var year = date.getFullYear();
+  </script>
 
 </body>
 

@@ -24,7 +24,7 @@
 
 .navbar-brand
 {
-	font-size: 0.8rem;
+	font-size: 0.78rem;
 }
 
 @media (min-width: 375px)
@@ -55,4 +55,27 @@
 	background-color: white;
 	border-radius: 1rem;
 	padding: 1rem;
+}
+
+.lang-overlay-box a
+{
+	width: 100%;
+}
+
+.lang-overlay-box a.second
+{
+	margin-top: 1rem;
+}
+
+@media (min-width: 490px)
+{
+	.lang-overlay-box a
+	{
+		width: auto;
+	}
+
+	.lang-overlay-box a.second
+	{
+		margin-top: auto;
+	}
 }

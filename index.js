@@ -36,7 +36,8 @@ function configure() {
 			index 			= handlebars.compile(data.toString())
 			
 			index_lang	= {
-				lang_overlay: '<div class="lang-overlay"><div class="lang-overlay-box"><h1>Bienvenue / Welcome</h1><div class="row"><div class="col text-center"><a href="/fr" class="btn btn-xl btn-primary">FR</a> </div><div class="col text-center"><a href="/en" class="btn btn-xl btn-secondary">EN</a></div></div></div></div><link rel="stylesheet" type="text/css" href="css/disable_scroll.css">'
+				title: "Bienvenue / Welcome - Cordonnerie et Boutique Western",
+				lang_overlay: '<div class="lang-overlay"><div class="lang-overlay-box text-center"><h1>Bienvenue / Welcome</h1><div class="row"><div class="col text-center"><a href="/fr" class="btn btn-xl btn-primary">FR</a> </div><div class="col text-center"><a href="/en" class="btn btn-xl btn-secondary second">EN</a></div></div></div></div><link rel="stylesheet" type="text/css" href="css/disable_scroll.css">'
 			}
 
 			index_en 		= {
@@ -169,7 +170,7 @@ function configure() {
 
 				// Contact 
 				contact_heading: "Lancez-nous un coup de fil",
-				contact_subheading: "Pour toutes questions qui pertinent à notre inventaire, où nous sommes situé, nos heures de travail ou plus!",
+				contact_subheading: "Pour toutes questions qui pertinent à notre inventaire, où nous sommes situé, nos heures de travail et plus!",
 			}
 		}
 	})

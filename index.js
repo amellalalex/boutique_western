@@ -3,195 +3,208 @@
 ////////////////////////
 
 // Express
-const express 		= require('express')
-const app					= express()
-const port				= 3000
+const express = require("express");
+const app = express();
+const port = 3000;
 
 // Path
-const path				= require('path')
+const path = require("path");
 
 // Handlebars
-const handlebars	= require('handlebars')
+const handlebars = require("handlebars");
 
 // filesystem
-const fs					= require('fs')
+const fs = require("fs");
 
 ///////////////
 // Configure //
 ///////////////
 
 // Index
-var index
-var index_lang
-var index_en
-var index_fr
+var index;
+var index_lang;
+var index_en;
+var index_fr;
 
 function configure() {
-	// Handlebar templates //
+  // Handlebar templates //
 
-	fs.readFile(path.join(__dirname, 'public/index.html'), {encoding: 'utf-8'}, (err, data) => {
-		if(err) console.log(`[!] Failed to load index template.`);
-		else {
-			// Compile template
-			index 			= handlebars.compile(data.toString())
-			
-			index_lang	= {
-				title: "Bienvenue / Welcome - Cordonnerie et Boutique Western",
-				lang_overlay: '<div class="lang-overlay"><div class="lang-overlay-box text-center"><h1>Bienvenue / Welcome</h1><div class="row"><div class="col text-center"><a href="/fr" class="btn btn-xl btn-primary">FR</a> </div><div class="col text-center"><a href="/en" class="btn btn-xl btn-secondary second">EN</a></div></div></div></div><link rel="stylesheet" type="text/css" href="css/disable_scroll.css">'
-			}
+  fs.readFile(
+    path.join(__dirname, "public/index.html"),
+    { encoding: "utf-8" },
+    (err, data) => {
+      if (err) console.log(`[!] Failed to load index template.`);
+      else {
+        // Compile template
+        index = handlebars.compile(data.toString());
 
-			index_en 		= {
-				// Top of page
-				title: "Welcome - Cordonnerie et Boutique Western",
-				brand: "Cordonnerie & Boutique Western",
+        index_lang = {
+          title: "Bienvenue / Welcome - Cordonnerie et Boutique Western",
+          lang_overlay:
+            '<div class="lang-overlay"><div class="lang-overlay-box text-center"><h1>Bienvenue / Welcome</h1><div class="row"><div class="col text-center"><a href="/fr" class="btn btn-xl btn-primary">FR</a> </div><div class="col text-center"><a href="/en" class="btn btn-xl btn-secondary second">EN</a></div></div></div></div><link rel="stylesheet" type="text/css" href="css/disable_scroll.css">'
+        };
 
-				// Navbar
-				about_link: "About",
-				service_link: "Products & Services",
-				portfolio_link: "Portfolio",
-				location_link: "Location",
-				contact_link: "Contact Us",
+        index_en = {
+          // Top of page
+          title: "Welcome - Cordonnerie et Boutique Western",
+          brand: "Cordonnerie & Boutique Western",
 
-				// Header 
-				heading: "An Unforgettable Stop",
-				subheading: "Welcoming boutique-goers since 1968",
-				call_to_action: "Tell me more!",
+          // Navbar
+          about_link: "About",
+          service_link: "Products & Services",
+          portfolio_link: "Portfolio",
+          location_link: "Location",
+          contact_link: "Contact Us",
 
-				// About section
-				about_heading: "About Our Shop",
-				about_description: "Since 1968, our shop has served locals and tourists alike in the Shediac, NB area.",
-				about_description2: "We sell a wide range of unique aboriginal and western antiques. View our products and services below!",
-				about_button: "Products & Services",
+          // Header
+          heading: "An Unforgettable Stop",
+          subheading: "Welcoming boutique-goers since 1968",
+          call_to_action: "Tell me more!",
 
-				// Products and services section 
-				service_heading: "Our Products & Services",
+          // About section
+          about_heading: "About Our Shop",
+          about_description:
+            "Since 1968, our shop has served locals and tourists alike in the Shediac, NB area.",
+          about_description2:
+            "We sell a wide range of unique aboriginal and western antiques. View our products and services below!",
+          about_button: "Products & Services",
 
-				native_products: "Native Products",
-				native_description: "We sell native products",
+          // Products and services section
+          service_heading: "Our Products & Services",
 
-				shoemending_service: "Shoemending",
-				shoemending_description: "We offer shoemending services",
+          native_products: "Native Products",
+          native_description: "We sell native products",
 
-				western_products: "Western Products",
-				western_description: "We sell western products",
+          shoemending_service: "Shoemending",
+          shoemending_description: "We offer shoemending services",
 
-				love_service: "Chosen with Love",
-				love_description: "Our antiques are handmade and chosen with love.",
+          western_products: "Western Products",
+          western_description: "We sell western products",
 
-				// Portfolio
-				portfolio_hats_cat: "Men & Women's",
-				portfolio_hats_desc: "Hats",
+          love_service: "Chosen with Love",
+          love_description: "Our antiques are handmade and chosen with love.",
 
-				portfolio_anushka_cat: "Women's",
-				portfolio_anushka_desc: "Anushkas",
+          // Portfolio
+          portfolio_hats_cat: "Men & Women's",
+          portfolio_hats_desc: "Hats",
 
-				portfolio_hatchets_cat: "Tools",
-				portfolio_hatchets_desc: "Hatchets",
+          portfolio_anushka_cat: "Women's",
+          portfolio_anushka_desc: "Anushkas",
 
-				portfolio_purses_cat: "Women's",
-				portfolio_purses_desc: "Purses",
+          portfolio_hatchets_cat: "Tools",
+          portfolio_hatchets_desc: "Hatchets",
 
-				portfolio_boots_cat: "Men & Women's",
-				portfolio_boots_desc: "Boots",
+          portfolio_purses_cat: "Women's",
+          portfolio_purses_desc: "Purses",
 
-				portfolio_mocassins_cat: "Men & Women's",
-				portfolio_mocassins_desc: "Mocassins",
+          portfolio_boots_cat: "Men & Women's",
+          portfolio_boots_desc: "Boots",
 
-				// Location
-				location_heading: "Location",
-				location_subheading: "It's easy to find us!",
+          portfolio_mocassins_cat: "Men & Women's",
+          portfolio_mocassins_desc: "Mocassins",
 
-				// Contact 
-				contact_heading: "Give Us a Call",
-				contact_subheading: "For any questions regarding our inventory, location, hours or more!",
+          // Location
+          location_heading: "Location",
+          location_subheading: "It's easy to find us!",
 
-			}		
+          // Contact
+          contact_heading: "Give Us a Call",
+          contact_subheading:
+            "For any questions regarding our inventory, location, hours or more!"
+        };
 
-			index_fr 		= {
-				// Top of page
-				title: "Accueil - Cordonnerie et Boutique Western",
-				brand: "Cordonnerie et Boutique Western",
+        index_fr = {
+          // Top of page
+          title: "Accueil - Cordonnerie Boutique Western et Amerindienne",
+          brand: "Cordonnerie Boutique Western",
 
-				// Navbar
-				about_link: "À propos",
-				service_link: "Services",
-				portfolio_link: "Portfolio",
-				location_link: "Endroit",
-				contact_link: "Nous Rejoindre",
+          // Navbar
+          about_link: "À propos",
+          service_link: "Services",
+          portfolio_link: "Portfolio",
+          location_link: "Endroit",
+          contact_link: "Nous Rejoindre",
 
-				// Header 
-				heading: "Une Visite Qui Vaut mille mots",
-				subheading: "Toujours accueillant depuis 1968",
-				call_to_action: "Parles-en!",
+          // Header
+          heading: "Une Visite Qui Vaut mille mots",
+          subheading: "Toujours accueillant depuis 1968",
+          call_to_action: "Parles-en!",
 
-				// About section
-				about_heading: "À propos",
-				about_description: "Depuis l'an 1968, notre boutique est un arrêt préféré des touristes et des habitants de la région de Shédiac au NB",
-				about_description2: "Nous disposons de divers antiques amérindiennes et du style 'western' uniques. Visitez l'apperçu de nos produits et services ci-dessous!",
-				about_button: "Produits et services",
+          // About section
+          about_heading: "A propos",
+          about_description:
+            "Depuis l'an 1968, notre boutique est un arrêt préféré des touristes et des habitants de la région de Shédiac au NB",
+          about_description2:
+            "Nous disposons de divers antiques amérindiennes et du style 'western' uniques. Visitez l'apperçu de nos produits et services ci-dessous!",
+          about_button: "Produits et services",
 
-				// Products and services section 
-				service_heading: "Nos produits et services",
+          // Products and services section
+          service_heading: "Nos produits et services",
 
-				native_products: "Produits amérindiens",
-				native_description: "Nous vendons des produits amérindiens",
+          native_products: "Produits amerindiens",
+          native_description: "Nous vendons des produits amérindiens",
 
-				shoemending_service: "Cordonnerie",
-				shoemending_description: "Nos offrons des services de cordonnerie",
+          shoemending_service: "Cordonnerie",
+          shoemending_description: "Nos offrons des services de cordonnerie",
 
-				western_products: "Produits western",
-				western_description: "Nous vendons des produits western",
+          western_products: "Produits western",
+          western_description: "Nous vendons des produits western",
 
-				love_service: "Choisi avec amour",
-				love_description: "Nos antiques sont fabriqués à la main et choisi avec amour.",
+          love_service: "Choisi avec amour",
+          love_description:
+            "Nos antiques sont fabriqués à la main et choisi avec amour.",
 
-				// Portfolio
-				portfolio_hats_cat: "Pour hommes et femmes",
-				portfolio_hats_desc: "Chapeaux",
+          // Portfolio
+          portfolio_hats_cat: "Pour hommes et femmes",
+          portfolio_hats_desc: "Chapeaux",
 
-				portfolio_anushka_cat: "Pour femmes",
-				portfolio_anushka_desc: "Anushkas",
+          portfolio_anushka_cat: "Pour femmes",
+          portfolio_anushka_desc: "Anushkas",
 
-				portfolio_hatchets_cat: "Outils",
-				portfolio_hatchets_desc: "Hachettes",
+          portfolio_hatchets_cat: "Outils",
+          portfolio_hatchets_desc: "Hachettes",
 
-				portfolio_purses_cat: "Pour femmes",
-				portfolio_purses_desc: "Sacoches",
+          portfolio_purses_cat: "Pour femmes",
+          portfolio_purses_desc: "Sacoches",
 
-				portfolio_boots_cat: "Pour hommes et femmes",
-				portfolio_boots_desc: "Bottes",
+          portfolio_boots_cat: "Pour hommes et femmes",
+          portfolio_boots_desc: "Bottes",
 
-				portfolio_mocassins_cat: "Pour hommes et femmes",
-				portfolio_mocassins_desc: "Mocassins",
+          portfolio_mocassins_cat: "Pour hommes et femmes",
+          portfolio_mocassins_desc: "Mocassins",
 
-				// Location
-				location_heading: "Endroit",
-				location_subheading: "Nous ne sommes pas loins!",
+          // Location
+          location_heading: "Endroit",
+          location_subheading: "Nous ne sommes pas loins!",
 
-				// Contact 
-				contact_heading: "Lancez-nous un coup de fil",
-				contact_subheading: "Pour toutes questions qui pertinent à notre inventaire, où nous sommes situé, nos heures de travail et plus!",
-			}
-		}
-	})
+          // Contact
+          contact_heading: "Lancez-nous un coup de fil",
+          contact_subheading:
+            "Pour toutes questions qui pertinent à notre inventaire, où nous sommes situé, nos heures de travail et plus!"
+        };
+      }
+    }
+  );
 }
 
 configure();
 
 // Express
-app.get('/', (req, res) => {
-	configure();
-	res.send(index(index_lang))
-})
+app.get("/", (req, res) => {
+  configure();
+  res.send(index(index_lang));
+});
 
-app.get('/en', (req, res) => {
-	res.send(index(index_en))
-})
+app.get("/en", (req, res) => {
+  res.send(index(index_en));
+});
 
-app.get('/fr', (req, res) => {
-	res.send(index(index_fr))
-})
+app.get("/fr", (req, res) => {
+  res.send(index(index_fr));
+});
 
-app.use(express.static('public'))
+app.use(express.static("public"));
 
-app.listen(port, () => console.log(`Boutique Western JS is listening on port ${port}`))
+app.listen(port, () =>
+  console.log(`Boutique Western JS is listening on port ${port}`)
+);

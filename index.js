@@ -64,9 +64,7 @@ function configure() {
           // About section
           about_heading: "About Our Shop",
           about_description:
-            "Since 1968, our shop has served locals and tourists alike in the Shediac, NB area.",
-          about_description2:
-            "We sell a wide range of unique aboriginal and western antiques. View our products and services below!",
+            "Since 1968, our shop has served locals and tourists alike in the Shediac, NB area.<br/><br/> We sell a wide range of unique aboriginal and western antiques. View our products and services below!",
           about_button: "Products & Services",
 
           // Products and services section
@@ -132,10 +130,9 @@ function configure() {
 
           // About section
           about_heading: "A propos",
+          // about_description: "Depuis l'an 1968, notre boutique est un arrêt préféré des touristes et des habitants de la région de Shédiac au NB. <br/><br/> Nous disposons de divers antiques amérindiennes et du style 'western' uniques. Visitez l'apperçu de nos produits et services ci-dessous!",
           about_description:
-            "Depuis l'an 1968, notre boutique est un arrêt préféré des touristes et des habitants de la région de Shédiac au NB",
-          about_description2:
-            "Nous disposons de divers antiques amérindiennes et du style 'western' uniques. Visitez l'apperçu de nos produits et services ci-dessous!",
+            "Située à Shediac, la Boutique Western et Autochtone est spécialisée en cordonnerie.<br/><br/>La boutique a été créée par M. Georges Pinard en 1968. Cordonnier depuis plus de 50 ans, il a démarré ses activités à Longueuil avant de déménager sa boutique en 2016 à Shediac.<br/><br/>Fort de ses nombreuses années d’expérience, M. Pinard possède un réel savoir-faire dans le domaine. Doté d’une équipe de professionnels, il est en mesure de répondre à tous vos besoins. <br/><br/>Nous assurons l’entretien et la réparation de tous types d’articles de cordonnerie. Nous exécutons un travail de qualité, rapide et soigné. <br/><br/>Nous vous proposons également des produits western. Nous commercialisons notamment des vêtements, des chapeaux, des bottes et des accessoires western. <br/><br/> Nous offrons à notre clientèle un service personnalisé et de qualité",
           about_button: "Produits et services",
 
           // Products and services section
@@ -190,6 +187,7 @@ function configure() {
 configure();
 
 // Express
+
 app.get("/", (req, res) => {
   configure();
   res.send(index(index_lang));

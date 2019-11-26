@@ -1,0 +1,4 @@
+{
+  "title": "Bienvenue / Welcome - Cordonnerie et Boutique Western",
+  "lang_overlay": "<div class=\"lang-overlay\"><div class=\"lang-overlay-box text-center\"><h1>Bienvenue / Welcome</h1><div class=\"row\"><div class=\"col text-center\"><a href=\"/fr\" class=\"btn btn-xl btn-primary\">FR</a> </div><div class=\"col text-center\"><a href=\"/en\" class=\"btn btn-xl btn-secondary second\">EN</a></div></div></div></div><link rel=\"stylesheet\" type=\"text/css\" href=\"css/disable_scroll.css\">"
+}

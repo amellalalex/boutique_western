@@ -1,0 +1,56 @@
+{
+  "title": "Welcome - Cordonnerie et Boutique Western",
+  "brand": "Cordonnerie & Boutique Western",
+
+  "about_link": "About",
+  "service_link": "Products & Services",
+  "portfolio_link": "Portfolio",
+  "location_link": "Location",
+  "contact_link": "Contact Us",
+
+  "heading": "An Unforgettable Stop",
+  "subheading": "Welcoming boutique-goers since 1968",
+  "call_to_action": "Tell me more!",
+
+  "about_heading": "About Our Shop",
+  "about_description": "Located in Shediac, Boutique Western et Autochtone specializes in shoemending. <br/> <br/> The boutique was created by Mr. Georges Pinard in 1968. As a shoemaker for more than 50 years, he started his activities in Longueuil before relocating in Shediac in 2016. <br/> <br/> With many years of experience, Mr. Pinard has a real know-how in the field. With our team of professionals, he is able to meet all your needs and expectations. <br/> <br/> We provide maintenance and repair of all types of shoes and shoe-related apparel. In addition, we perform quality work that is quick and neat. <br/> <br/> Western products are available in our store. In particular, we sell clothing, hats, boots and western accessories. <br/> <br/> We offer our customers a personalized and quality experience.",
+  "about_button": "Products & Services",
+
+  "service_heading": "Our Products And Services",
+
+  "native_products": "Native Products",
+  "native_description": "We sell native products",
+
+  "shoemending_service": "Shoemending",
+  "shoemending_description": "We offer shoemending services",
+
+  "western_products": "Western Products",
+  "western_description": "We sell western products",
+
+  "love_service": "Chosen with Love",
+  "love_description": "Our antiques are handmade and chosen with love.",
+
+  "portfolio_hats_cat": "Men & Women's",
+  "portfolio_hats_desc": "Hats",
+
+  "portfolio_anushka_cat": "Women's",
+  "portfolio_anushka_desc": "Anushkas",
+
+  "portfolio_hatchets_cat": "Tools",
+  "portfolio_hatchets_desc": "Hatchets",
+
+  "portfolio_purses_cat": "Women's",
+  "portfolio_purses_desc": "Purses",
+
+  "portfolio_boots_cat": "Men & Women's",
+  "portfolio_boots_desc": "Boots",
+
+  "portfolio_mocassins_cat": "Men & Women's",
+  "portfolio_mocassins_desc": "Mocassins",
+
+  "location_heading": "Location",
+  "location_subheading": "It's easy to find us!",
+
+  "contact_heading": "Give Us a Call",
+  "contact_subheading": "For any questions regarding our inventory, location, hours or more!"
+}

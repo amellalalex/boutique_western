@@ -16,15 +16,17 @@ const handlebars = require("handlebars");
 // filesystem
 const fs = require("fs");
 
+// languages
+const en = require("./lang/en.json");
+const fr = require("./lang/fr.json");
+const select = require("./lang/select.json");
+
 ///////////////
 // Configure //
 ///////////////
 
 // Index
 var index;
-var index_lang;
-var index_en;
-var index_fr;
 
 function configure() {
   // Handlebar templates //
@@ -37,148 +39,6 @@ function configure() {
       else {
         // Compile template
         index = handlebars.compile(data.toString());
-
-        index_lang = {
-          title: "Bienvenue / Welcome - Cordonnerie et Boutique Western",
-          lang_overlay:
-            '<div class="lang-overlay"><div class="lang-overlay-box text-center"><h1>Bienvenue / Welcome</h1><div class="row"><div class="col text-center"><a href="/fr" class="btn btn-xl btn-primary">FR</a> </div><div class="col text-center"><a href="/en" class="btn btn-xl btn-secondary second">EN</a></div></div></div></div><link rel="stylesheet" type="text/css" href="css/disable_scroll.css">'
-        };
-
-        index_en = {
-          // Top of page
-          title: "Welcome - Cordonnerie et Boutique Western",
-          brand: "Cordonnerie & Boutique Western",
-
-          // Navbar
-          about_link: "About",
-          service_link: "Products & Services",
-          portfolio_link: "Portfolio",
-          location_link: "Location",
-          contact_link: "Contact Us",
-
-          // Header
-          heading: "An Unforgettable Stop",
-          subheading: "Welcoming boutique-goers since 1968",
-          call_to_action: "Tell me more!",
-
-          // About section
-          about_heading: "About Our Shop",
-          about_description:
-            "Since 1968, our shop has served locals and tourists alike in the Shediac, NB area.<br/><br/> We sell a wide range of unique aboriginal and western antiques. View our products and services below!",
-          about_button: "Products & Services",
-
-          // Products and services section
-          service_heading: "Our Products & Services",
-
-          native_products: "Native Products",
-          native_description: "We sell native products",
-
-          shoemending_service: "Shoemending",
-          shoemending_description: "We offer shoemending services",
-
-          western_products: "Western Products",
-          western_description: "We sell western products",
-
-          love_service: "Chosen with Love",
-          love_description: "Our antiques are handmade and chosen with love.",
-
-          // Portfolio
-          portfolio_hats_cat: "Men & Women's",
-          portfolio_hats_desc: "Hats",
-
-          portfolio_anushka_cat: "Women's",
-          portfolio_anushka_desc: "Anushkas",
-
-          portfolio_hatchets_cat: "Tools",
-          portfolio_hatchets_desc: "Hatchets",
-
-          portfolio_purses_cat: "Women's",
-          portfolio_purses_desc: "Purses",
-
-          portfolio_boots_cat: "Men & Women's",
-          portfolio_boots_desc: "Boots",
-
-          portfolio_mocassins_cat: "Men & Women's",
-          portfolio_mocassins_desc: "Mocassins",
-
-          // Location
-          location_heading: "Location",
-          location_subheading: "It's easy to find us!",
-
-          // Contact
-          contact_heading: "Give Us a Call",
-          contact_subheading:
-            "For any questions regarding our inventory, location, hours or more!"
-        };
-
-        index_fr = {
-          // Top of page
-          title: "Accueil - Cordonnerie Boutique Western et Amerindienne",
-          brand: "Cordonnerie Boutique Western",
-
-          // Navbar
-          about_link: "À propos",
-          service_link: "Services",
-          portfolio_link: "Portfolio",
-          location_link: "Endroit",
-          contact_link: "Nous Rejoindre",
-
-          // Header
-          heading: "Une Visite Qui Vaut mille mots",
-          subheading: "Toujours accueillant depuis 1968",
-          call_to_action: "Parles-en!",
-
-          // About section
-          about_heading: "A propos",
-          // about_description: "Depuis l'an 1968, notre boutique est un arrêt préféré des touristes et des habitants de la région de Shédiac au NB. <br/><br/> Nous disposons de divers antiques amérindiennes et du style 'western' uniques. Visitez l'apperçu de nos produits et services ci-dessous!",
-          about_description:
-            "Située à Shediac, la Boutique Western et Autochtone est spécialisée en cordonnerie.<br/><br/>La boutique a été créée par M. Georges Pinard en 1968. Cordonnier depuis plus de 50 ans, il a démarré ses activités à Longueuil avant de déménager sa boutique en 2016 à Shediac.<br/><br/>Fort de ses nombreuses années d’expérience, M. Pinard possède un réel savoir-faire dans le domaine. Doté d’une équipe de professionnels, il est en mesure de répondre à tous vos besoins. <br/><br/>Nous assurons l’entretien et la réparation de tous types d’articles de cordonnerie. Nous exécutons un travail de qualité, rapide et soigné. <br/><br/>Nous vous proposons également des produits western. Nous commercialisons notamment des vêtements, des chapeaux, des bottes et des accessoires western. <br/><br/> Nous offrons à notre clientèle un service personnalisé et de qualité",
-          about_button: "Produits et services",
-
-          // Products and services section
-          service_heading: "Nos produits et services",
-
-          native_products: "Produits amerindiens",
-          native_description: "Nous vendons des produits amérindiens",
-
-          shoemending_service: "Cordonnerie",
-          shoemending_description: "Nos offrons des services de cordonnerie",
-
-          western_products: "Produits western",
-          western_description: "Nous vendons des produits western",
-
-          love_service: "Choisi avec amour",
-          love_description:
-            "Nos antiques sont fabriqués à la main et choisi avec amour.",
-
-          // Portfolio
-          portfolio_hats_cat: "Pour hommes et femmes",
-          portfolio_hats_desc: "Chapeaux",
-
-          portfolio_anushka_cat: "Pour femmes",
-          portfolio_anushka_desc: "Anushkas",
-
-          portfolio_hatchets_cat: "Outils",
-          portfolio_hatchets_desc: "Hachettes",
-
-          portfolio_purses_cat: "Pour femmes",
-          portfolio_purses_desc: "Sacoches",
-
-          portfolio_boots_cat: "Pour hommes et femmes",
-          portfolio_boots_desc: "Bottes",
-
-          portfolio_mocassins_cat: "Pour hommes et femmes",
-          portfolio_mocassins_desc: "Mocassins",
-
-          // Location
-          location_heading: "Endroit",
-          location_subheading: "Nous ne sommes pas loins!",
-
-          // Contact
-          contact_heading: "Lancez-nous un coup de fil",
-          contact_subheading:
-            "Pour toutes questions qui pertinent à notre inventaire, où nous sommes situé, nos heures de travail et plus!"
-        };
       }
     }
   );
@@ -190,15 +50,15 @@ configure();
 
 app.get("/", (req, res) => {
   configure();
-  res.send(index(index_lang));
+  res.send(index(select));
 });
 
 app.get("/en", (req, res) => {
-  res.send(index(index_en));
+  res.send(index(en));
 });
 
 app.get("/fr", (req, res) => {
-  res.send(index(index_fr));
+  res.send(index(fr));
 });
 
 app.use(express.static("public"));

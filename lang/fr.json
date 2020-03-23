@@ -1,10 +1,11 @@
 {
   "title": "Accueil - Cordonnerie Boutique Western et Amerindienne",
   "brand": "Cordonnerie Boutique Western",
+  "brand_gallery": "<a class=\"navbar-brand js-scroll-trigger\" href=\"/fr#portfolio\"><i class=\"fas fa-arrow-circle-left\"></i> Retour à l'accueil",
 
   "about_link": "À propos",
   "service_link": "Services",
-  "portfolio_link": "Portfolio",
+  "portfolio_link": "Gallerie",
   "location_link": "Endroit",
   "contact_link": "Nous Rejoindre",
 

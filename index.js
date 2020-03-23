@@ -27,6 +27,7 @@ const select = require("./lang/select.json");
 
 // Index
 var index;
+var gallery;
 
 function configure() {
   // Handlebar templates //
@@ -39,6 +40,18 @@ function configure() {
       else {
         // Compile template
         index = handlebars.compile(data.toString());
+      }
+    }
+  );
+
+  fs.readFile(
+    path.join(__dirname, "public/gallery.html"),
+    { encoding: "utf-8" },
+    (err, data) => {
+      if (err) console.log(`[!] Failed to load gallery template.`);
+      else {
+        // Compile template
+        gallery = handlebars.compile(data.toString());
       }
     }
   );
@@ -59,6 +72,14 @@ app.get("/en", (req, res) => {
 
 app.get("/fr", (req, res) => {
   res.send(index(fr));
+});
+
+app.get("/en/gallery", (req, res) => {
+  res.send(gallery(en));
+});
+
+app.get("/fr/gallerie", (req, res) => {
+  res.send(gallery(fr));
 });
 
 app.use(express.static("public"));

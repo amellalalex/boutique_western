@@ -1,10 +1,11 @@
 {
   "title": "Welcome - Cordonnerie et Boutique Western",
   "brand": "Cordonnerie & Boutique Western",
+  "brand_gallery": "<a class=\"navbar-brand js-scroll-trigger\" href=\"/en#portfolio\"><i class=\"fas fa-arrow-circle-left\"></i> Back to homepage",
 
   "about_link": "About",
   "service_link": "Products & Services",
-  "portfolio_link": "Portfolio",
+  "portfolio_link": "Gallery",
   "location_link": "Location",
   "contact_link": "Contact Us",
 

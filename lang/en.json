@@ -31,6 +31,8 @@
   "love_service": "Chosen with Love",
   "love_description": "Our antiques are handmade and chosen with love.",
 
+  "portfolio_to_gallery": "<a href=\"/en/gallery\">click me!!</a>",
+
   "portfolio_hats_cat": "Men & Women's",
   "portfolio_hats_desc": "Hats",
 

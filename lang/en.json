@@ -39,7 +39,7 @@
   "portfolio_anushka_cat": "Women's",
   "portfolio_anushka_desc": "Anushkas",
 
-  "portfolio_hatchets_cat": "Tools",
+  "portfolio_hatchets_cat": "Miscellaneous",
   "portfolio_hatchets_desc": "Hatchets",
 
   "portfolio_purses_cat": "Women's",
@@ -50,6 +50,9 @@
 
   "portfolio_mocassins_cat": "Men & Women's",
   "portfolio_mocassins_desc": "Mocassins",
+
+  "portfolio_view_more": "View More",
+  "portfolio_view_more_url": "\"/en/gallery\"",
 
   "location_heading": "Location",
   "location_subheading": "It's easy to find us!",

@@ -191,13 +191,12 @@
     </section>
 
     <!-- Portfolio Section -->
-    {{{ portfolio_to_gallery }}}
-    <section id="portfolio">
+    <section id="portfolio" class="magnific-popup">
       <div class="container-fluid p-0">
         <div class="row no-gutters">
           <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="img/products/1.jpg">
-              <img class="img-fluid" src="img/products/1.jpg" alt="" />
+            <a class="portfolio-box" href="/img/portfolio/8.jpg">
+              <img class="img-fluid" src="/img/portfolio/8.jpg" alt="" />
               <div class="portfolio-box-caption">
                 <div class="project-category text-white-50">
                   {{ portfolio_hats_cat }}
@@ -209,8 +208,8 @@
             </a>
           </div>
           <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="img/products/2.jpg">
-              <img class="img-fluid" src="img/products/2.jpg" alt="" />
+            <a class="portfolio-box" href="/img/portfolio/0.jpg">
+              <img class="img-fluid" src="/img/portfolio/0.jpg" alt="" />
               <div class="portfolio-box-caption">
                 <div class="project-category text-white-50">
                   {{ portfolio_anushka_cat }}
@@ -222,8 +221,8 @@
             </a>
           </div>
           <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="img/products/3.jpg">
-              <img class="img-fluid" src="img/products/3.jpg" alt="" />
+            <a class="portfolio-box" href="/img/portfolio/10.jpg">
+              <img class="img-fluid" src="/img/portfolio/10.jpg" alt="" />
               <div class="portfolio-box-caption">
                 <div class="project-category text-white-50">
                   {{ portfolio_hatchets_cat }}
@@ -235,8 +234,8 @@
             </a>
           </div>
           <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="img/products/4.jpg">
-              <img class="img-fluid" src="img/products/4.jpg" alt="" />
+            <a class="portfolio-box" href="/img/portfolio/11.jpg">
+              <img class="img-fluid" src="/img/portfolio/11.jpg" alt="" />
               <div class="portfolio-box-caption">
                 <div class="project-category text-white-50">
                   {{ portfolio_purses_cat }}
@@ -248,8 +247,8 @@
             </a>
           </div>
           <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="img/products/5.jpg">
-              <img class="img-fluid" src="img/products/5.jpg" alt="" />
+            <a class="portfolio-box" href="/img/portfolio/33.jpg">
+              <img class="img-fluid" src="/img/portfolio/33.jpg" alt="" />
               <div class="portfolio-box-caption">
                 <div class="project-category text-white-50">
                   {{ portfolio_boots_cat }}
@@ -261,8 +260,8 @@
             </a>
           </div>
           <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="img/products/6.jpg">
-              <img class="img-fluid" src="img/products/6.jpg" alt="" />
+            <a class="portfolio-box" href="/img/portfolio/4.jpg">
+              <img class="img-fluid" src="/img/portfolio/4.jpg" alt="" />
               <div class="portfolio-box-caption p-3">
                 <div class="project-category text-white-50">
                   {{ portfolio_mocassins_cat }}
@@ -277,6 +276,10 @@
       </div>
     </section>
 
+    <div class="row justify-content-center" style="margin-top: 3rem; margin-bottom: 3rem;">
+      <a href={{{ portfolio_view_more_url }}} class="btn btn-xl btn-primary">{{ portfolio_view_more }}</a>
+    </div>
+    
     <!-- Location -->
     <section class="page-section bg-light" id="location">
       <div class="container text-center">
@@ -337,10 +340,10 @@
 
     <!-- Plugin JavaScript -->
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-    <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+    <script src="vendor/magnific-popup/jquery.magnific-popup.js"></script>
 
     <!-- Custom scripts for this template -->
-    <script src="js/creative.min.js"></script>
+    <script src="js/creative.js"></script>
 
     <!-- Google map embedded -->
     <script>

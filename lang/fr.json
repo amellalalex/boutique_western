@@ -37,7 +37,7 @@
   "portfolio_anushka_cat": "Pour femmes",
   "portfolio_anushka_desc": "Anushkas",
 
-  "portfolio_hatchets_cat": "Outils",
+  "portfolio_hatchets_cat": "Articles divers",
   "portfolio_hatchets_desc": "Hachettes",
 
   "portfolio_purses_cat": "Pour femmes",
@@ -48,6 +48,9 @@
 
   "portfolio_mocassins_cat": "Pour hommes et femmes",
   "portfolio_mocassins_desc": "Mocassins",
+
+  "portfolio_view_more": "Voir d'avantage",
+  "portfolio_view_more_url": "\"/fr/gallerie\"",
 
   "location_heading": "Endroit",
   "location_subheading": "Nous ne sommes pas loins!",
